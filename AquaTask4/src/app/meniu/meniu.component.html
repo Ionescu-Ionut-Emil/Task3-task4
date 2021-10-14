@@ -1,0 +1,7 @@
+<div *ngIf="isLoggIn" class="vertical-menu">
+    <a routerLink="/Home" routerLinkActive="active" >Home</a>
+    <a routerLink="/Employees" routerLinkActive="active">Employees Table</a>
+    <a routerLink="/Projects" routerLinkActive="active"> Project Table</a>
+    <a  *ngIf="isAdmin" routerLink="/Users" routerLinkActive="active"> Users Table</a>
+    <a (click)="logOut()" class="pointer"> Log Out</a>
+  </div>

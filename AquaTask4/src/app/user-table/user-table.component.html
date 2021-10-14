@@ -1,0 +1,16 @@
+<table>
+    <tr>
+      <th>Name</th>
+      <th>Role</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let user of users">
+      <td style="width:45%">{{user.User_name}}</td>
+      <td style="width:45%">{{user.roles.Name}}</td>
+      <td style="width:10%">
+        <button (click)="deleteUser(user.id)" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+            <mat-icon>delete</mat-icon>
+          </button>
+      </td>
+    </tr>
+  </table>

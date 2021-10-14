@@ -1,0 +1,19 @@
+.allign-card{
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.allign-header{
+    display: block;
+}
+
+.card-format{
+    display: table-caption;
+    text-align: center;
+}
+
+.logIn{
+    cursor: pointer;
+}

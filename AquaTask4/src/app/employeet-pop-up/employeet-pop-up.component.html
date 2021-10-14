@@ -1,0 +1,39 @@
+<h1 mat-dialog-title> {{data.event}} employee</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.employee.Name" placeholder="Employee Name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.employee.Adress" placeholder="Employee Adress">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.employee.Email" placeholder="Employee Email">
+ </mat-form-field>
+ <mat-form-field>
+    <input matInput [(ngModel)]="data.employee.Salary" placeholder="Employee Salary ">
+ </mat-form-field>
+ <mat-form-field>
+    <input matInput [(ngModel)]="data.employee.Job_Title" placeholder="Job_Title">
+ </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Start Date</mat-label>
+    <input matInput [(ngModel)]="data.employee.Hire_Date" [matDatepicker]="picker" disabled>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker disabled="false"></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Select project</mat-label>
+    <mat-select [(ngModel)]="data.employee.project_id">
+      <mat-option *ngFor="let project of projects" [value]="project.id">
+        {{project.Project_name}} - {{project.id}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+ 
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="action()" >save</button>
+  <button mat-button [mat-dialog-close]="data.employee" cdkFocusInitial>close</button>
+</div>

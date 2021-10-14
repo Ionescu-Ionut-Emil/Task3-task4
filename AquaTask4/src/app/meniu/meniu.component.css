@@ -1,0 +1,29 @@
+.vertical-menu {
+    display: flex;
+    width:100%;
+  }
+  
+  .vertical-menu a {
+    text-align: center;
+    width: 33%;
+    
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+  }
+  
+  .vertical-menu a:hover {
+    background-color: #519be0;
+    color:white;
+  }
+  
+  .vertical-menu a.active {
+    background-color: #197ddb;
+    color: white;
+  }
+
+  .pointer{
+    cursor: pointer;
+}

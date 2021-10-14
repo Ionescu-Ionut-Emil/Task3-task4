@@ -1,0 +1,36 @@
+<div>
+    <button (click)="addNewEmployee()" class="div-button" mat-raised-button color="primary">Add</button>
+  </div>
+
+<table>
+    <tr>
+      <th>Name</th>
+      <th>Adress</th>
+      <th>Email</th>
+      <th>Hire Date</th>
+      <th>Salary</th>
+      <th>Job Title</th>
+      <th>projectID</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let employee of employees">
+      <td style="width:20%">{{employee.Name}}</td>
+      <td style="width:5%">{{employee.Adress}}</td>
+      <td style="width:20%">{{employee.Email}}</td>
+      <td style="width:15%">{{employee.Hire_Date | date}}</td>
+      <td style="width:15%">{{employee.Salary}}</td>
+      <td style="width:10%">{{employee.Job_Title}}</td>
+      <td style="width:5%">{{employee.project_id}}</td>
+      <td style="width:5%">
+        <button (click)="deleteEmloy(employee.id)" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+            <mat-icon>delete</mat-icon>
+          </button>
+      </td>
+      <td style="width:5%">
+        <button (click)="editEmployee(employee)"  mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+            <mat-icon>edit</mat-icon>
+          </button>
+      </td>
+    </tr>
+  </table>
