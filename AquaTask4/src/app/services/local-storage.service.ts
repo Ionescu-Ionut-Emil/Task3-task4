@@ -13,7 +13,7 @@ export class LocalStorageService {
   constructor(
     private jwtHelper: JwtHelperService,
     private router: Router,
-    private snackBar: MatSnackBar) { }
+    private notifiction: MatSnackBar) { }
   private storageSub = new Subject<String>();
 
   watchStorage(): Observable<any> {
@@ -49,8 +49,8 @@ export class LocalStorageService {
     return '';
   }
 
-  openSnackBar(message: string) {
-    this.snackBar.open(message, '',{
+  openNotifiction(message: string) {
+    this.notifiction.open(message, '',{
       duration: 2000,
     });
   }

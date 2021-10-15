@@ -36,10 +36,10 @@ export class EmployeetPopUpComponent implements OnInit {
   update(){
     this.employeesService.updateEmployee(this.data.employee).subscribe(res=>
       { 
-        this.locatStorage.openSnackBar("Succes");
+        this.locatStorage.openNotifiction("Succes");
         this.dialogRef.close();
       },(error) => { 
-        this.locatStorage.openSnackBar(error.message);
+        this.locatStorage.openNotifiction(error.message);
        });
   }
 
@@ -47,10 +47,10 @@ export class EmployeetPopUpComponent implements OnInit {
     debugger;
     this.employeesService.createEmployee(this.data.employee).subscribe(res=>
       { 
-        this.locatStorage.openSnackBar("Succes");
+        this.locatStorage.openNotifiction("Succes");
         this.dialogRef.close();
       },(error) => { 
-        this.locatStorage.openSnackBar(error.message);
+        this.locatStorage.openNotifiction(error.message);
        });
   }
 }

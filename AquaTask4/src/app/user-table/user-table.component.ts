@@ -19,19 +19,19 @@ export class UserTableComponent implements OnInit {
   ngOnInit(): void {
     this.employeesService.getUser().subscribe(res =>{
       this.users=res;
-      this.locatStorage.openSnackBar("Succes");
+      this.locatStorage.openNotifiction("Succes");
     },(error)=>{
-      this.locatStorage.openSnackBar(error.message);
+      this.locatStorage.openNotifiction(error.message);
   })
   }
    
   deleteUser(id:number){
     this.employeesService.deleteUser(id).subscribe(res =>
       {
-        this.locatStorage.openSnackBar("Succes");
+        this.locatStorage.openNotifiction("Succes");
         this.ngOnInit();
       },(error) => { 
-        this.locatStorage.openSnackBar(error.message);
+        this.locatStorage.openNotifiction(error.message);
       });
 
   }

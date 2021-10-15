@@ -24,7 +24,7 @@ export class LogInComponent implements OnInit {
 
   logIn(){
     if(!this.password ||this.password.length === 0 || !this.userName ||this.userName.length === 0 ){
-      return this.locatStorage.openSnackBar("Insert credentials.");
+      return this.locatStorage.openNotifiction("Insert credentials.");
     }
 
     let user = {
@@ -34,10 +34,10 @@ export class LogInComponent implements OnInit {
 
     this.userService.logIn(user).subscribe(res =>{
       this.locatStorage.token = res.accessToken;
-      this.locatStorage.openSnackBar('Succes');
+      this.locatStorage.openNotifiction('Succes');
       this.router.navigate(['Home']);
     },(error)=>{
-      this.locatStorage.openSnackBar(error.message);
+      this.locatStorage.openNotifiction(error.message);
   })
   }
 }

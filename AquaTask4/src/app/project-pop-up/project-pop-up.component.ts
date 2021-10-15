@@ -29,20 +29,20 @@ export class ProjectPopUpComponent implements OnInit {
   update(){
     this.projectService.updateProject(this.data.project).subscribe(res=>
       { 
-        this.locatStorage.openSnackBar("Succes");
+        this.locatStorage.openNotifiction("Succes");
         this.dialogRef.close();
       },(error) => { 
-        this.locatStorage.openSnackBar(error.message);
+        this.locatStorage.openNotifiction(error.message);
        });
   }
 
   create(){
     this.projectService.createProject(this.data.project).subscribe(res=>
       { 
-        this.locatStorage.openSnackBar("Succes");
+        this.locatStorage.openNotifiction("Succes");
         this.dialogRef.close();
       },(error) => { 
-        this.locatStorage.openSnackBar(error.message);
+        this.locatStorage.openNotifiction(error.message);
        });
   }
 }

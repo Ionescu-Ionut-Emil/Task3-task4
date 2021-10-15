@@ -22,19 +22,19 @@ export class EmployeesTableComponent implements OnInit {
   ngOnInit(): void {
     this.employeesService.gellAllEmployees().subscribe(res =>{
       this.employees=res;
-      this.locatStorage.openSnackBar("Succes");
+      this.locatStorage.openNotifiction("Succes");
     },(error)=>{
-      this.locatStorage.openSnackBar(error.message);
+      this.locatStorage.openNotifiction(error.message);
   })
   }
 
   deleteEmloy(id:number){
     this.employeesService.deleteEmployee(id).subscribe(res =>
       {
-        this.locatStorage.openSnackBar("Succes");
+        this.locatStorage.openNotifiction("Succes");
         this.ngOnInit();
       },(error) => { 
-        this.locatStorage.openSnackBar(error.message);
+        this.locatStorage.openNotifiction(error.message);
       });
 
   }

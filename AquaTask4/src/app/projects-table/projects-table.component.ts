@@ -22,19 +22,19 @@ export class ProjectsTableComponent implements OnInit {
   ngOnInit(): void {
     this.projectService.gellAllProjects().subscribe(res => {
       this.projects = res;
-      this.locatStorage.openSnackBar("Succces");
+      this.locatStorage.openNotifiction("Succces");
     },(error) => { 
-      this.locatStorage.openSnackBar(error.message);
+      this.locatStorage.openNotifiction(error.message);
      });
   }
 
   deleteProject(id:number){
     this.projectService.deleteProject(id).subscribe(res =>
       {
-        this.locatStorage.openSnackBar("Succces");
+        this.locatStorage.openNotifiction("Succces");
         this.ngOnInit();
       },(error) => { 
-        this.locatStorage.openSnackBar(error.message);
+        this.locatStorage.openNotifiction(error.message);
        });
   }
 

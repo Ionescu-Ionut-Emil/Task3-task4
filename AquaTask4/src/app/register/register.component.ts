@@ -27,15 +27,15 @@ export class RegisterComponent implements OnInit {
   register(){
 
     if(!this.password ||this.password.length === 0 || !this.userName ||this.userName.length === 0 ){
-      return this.locatStorage.openSnackBar("Insert credentials.");
+      return this.locatStorage.openNotifiction("Insert credentials.");
     }
 
     if(this.password.length < 5){
-      return this.locatStorage.openSnackBar("Password must have more than 5 characters.");
+      return this.locatStorage.openNotifiction("Password must have more than 5 characters.");
     }
 
     if(this.password !== this.confrimPassword){
-      return this.locatStorage.openSnackBar("Password and Confirm Password are not the same.");
+      return this.locatStorage.openNotifiction("Password and Confirm Password are not the same.");
     }
 
     let newUser = {
@@ -45,9 +45,9 @@ export class RegisterComponent implements OnInit {
 
     this.userService.register(newUser).subscribe(res =>{
       this.router.navigate(['LogIn']);
-      this.locatStorage.openSnackBar('Succes');
+      this.locatStorage.openNotifiction('Succes');
     },(error)=>{
-      this.locatStorage.openSnackBar(error.message);
+      this.locatStorage.openNotifiction(error.message);
   })
   }
 }
